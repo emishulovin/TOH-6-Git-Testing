@@ -1,0 +1,29 @@
+<h1>{{ title }}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="p-field p-col-12 p-md-4">
+      <label for="icon">Calendar</label>
+      
+      <p-calendar formControlName="date" [showIcon]="true" inputId="icon"></p-calendar>
+      <button type="submit">Submit</button>
+    </div>
+
+    
+    <div class="p-field p-col-12 p-md-4">
+        <label for="monthpicker">Month Picker</label>
+        <p-calendar formControlName="date2" view="month" dateFormat="mm/yy" [yearNavigator]="true" yearRange="2000:2030" monthRange="January:February" [readonlyInput]="true" inputId="monthpicker" [showIcon]="true" ></p-calendar>
+    </div>
+
+  </form>
+
+  <!-- <div> -->
+   <!-- Date2<input FormControlName="date2" (ngSubmit)="onSubmit()"/> -->
+    <!-- <p-calendar FormControlName="date2" [showIcon]="true" inputId="icon" (ngSubmit)="onSubmit()"></p-calendar>
+    <button type="submit" >submit2</button>
+  </div> -->
+
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
